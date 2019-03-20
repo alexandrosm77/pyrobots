@@ -5,8 +5,8 @@ orientations_reverse = {'0': 'N', '90': 'E', '180':'S', '270':'W'}
 
 class Grid:
     def __init__(self, x, y):
-        self.max_x = x
-        self.max_y = y
+        self.max_x = x if (x<=50) or (x>0) else 50
+        self.max_y = y if (y<=50) or (y>0) else 50
         self.scent = []
     
     def add_scent(self, x, y, orientation):
