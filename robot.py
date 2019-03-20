@@ -2,7 +2,7 @@
 """Software to simulate a robot that lives on a planet
    Requires data that should be in a testdata.txt file
    Run with:
-   python robot.py
+   python runme.py
 """
 orientations = {'N': 0, 'E': 90, 'S': 180, 'W': 270}
 orientations_reverse = {'0': 'N', '90': 'E', '180':'S', '270':'W'}
@@ -86,6 +86,7 @@ class Robot:
         return response
 
 def process_input(input):
+    """Function that processes input for creating a planet and moving robots. Returns results in a list """
     input_lines = input.splitlines()
     mars_x, mars_y = (int(x) for x in input_lines[0].split(' '))
     mars = Grid(mars_x, mars_y)
@@ -103,11 +104,5 @@ def process_input(input):
         
     return response
 
-# Read input from txt file
-file = open('testdata.txt', 'r')
-input = file.read() 
 
-# process input and print result
-for line in process_input(input):
-    print line
 
